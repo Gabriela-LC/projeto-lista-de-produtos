@@ -71,9 +71,13 @@ function atualizaPrecoTotal(listaProdutos){
     let precoTotalProdutos = 0;
     const total = document.getElementById("precoTotal");
 
-    for(let i = 0; i < listaProdutos.length; i++){
-        precoTotalProdutos += listaProdutos[i].preco
-    }
+    // for(let i = 0; i < listaProdutos.length; i++){
+    //     precoTotalProdutos += listaProdutos[i].preco
+    // }
+
+    listaProdutos.forEach(({preco}) => {
+        precoTotalProdutos += preco
+    })
 
     total.innerText = precoTotalProdutos
 
